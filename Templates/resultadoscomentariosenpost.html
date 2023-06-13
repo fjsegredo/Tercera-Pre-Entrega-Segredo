@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}Resultados de búsqueda{% endblock %}
+
+{% block content %}
+    <h1>Resultados de Búsqueda de comentarios en: </h1>
+    <h2>{{ post }}</h2>
+    {% for comentario in comentarios %}
+        <h3>Autor: {{ comentario.autor }}</h3>
+        <p>Publicación: {{ comentario.fecha }}</p>
+        <p>Comentario: {{ comentario.texto }}</p>
+        <hr>
+    {% empty %}
+        <p>No se encontraron resultados.</p>
+    {% endfor %}
+
+{% endblock %}
+   
